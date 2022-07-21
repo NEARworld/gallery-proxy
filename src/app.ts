@@ -2,20 +2,16 @@ import "dotenv/config";
 import express, { Request, Response, NextFunction } from "express";
 import { createApi } from "unsplash-js";
 import nodeFetch from "node-fetch";
+import cors from "cors";
 import * as config from "./config.js";
 
 const app = express();
 
-// declare global {
-//   var fetch: typeof nodeFetch.default;
-//   type RequestInit = nodeFetch.RequestInit;
-//   type Response = nodeFetch.Response;
-// }
-
 const unsplash = createApi({
   accessKey: config.accessKey,
-  fetch: nodeFetch as unknown as typeof fetch,
+  fetch: nodeFetch as typeof fetch,
 });
+app.use(cors());
 
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
   unsplash.photos

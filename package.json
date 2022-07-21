@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/NEARworld/gallery-proxy#readme",
   "dependencies": {
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/node": "^18.0.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "node-fetch": "^3.2.9",
