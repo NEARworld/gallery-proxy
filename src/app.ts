@@ -16,12 +16,12 @@ app.use(cors());
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
   unsplash.photos
     .getRandom({
-      count: 10,
+      count: 30,
     })
-    .then((response: any) => {
+    .then((response) => {
       res.json(response.response);
     })
-    .catch((err: object) => console.log(err));
+    .catch((err) => console.log(err));
   console.log("get request to /");
 });
 
